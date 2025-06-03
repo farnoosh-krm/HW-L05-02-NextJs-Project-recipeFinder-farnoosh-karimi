@@ -1,0 +1,11 @@
+.textContainer {
+  padding: 30px;
+  text-align: justify;
+}
+
+.textContainer h1 {
+  font-size: clamp(16px, 4vw, 24px);
+  font-weight: bold;
+  color: #474747;
+  margin-bottom: 30px;
+}

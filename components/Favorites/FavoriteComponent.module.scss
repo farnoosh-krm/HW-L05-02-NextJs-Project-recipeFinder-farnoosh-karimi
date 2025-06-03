@@ -1,0 +1,41 @@
+.mainContainer {
+  display: grid;
+  padding: 20px 80px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 290px));
+  justify-content: space-evenly;
+
+  gap: 1.5rem;
+  row-gap: 5rem;
+  margin: 1rem;
+}
+.favoriteContainer {
+  background-color: #ffffff4d;
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 30%;
+  padding: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  height: 350px;
+  padding-top: 60px;
+
+  transition: transform 0.6s ease, box-shadow 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.favoriteContainer:hover {
+  background-color: #f0f0f0d8;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.pageTitle {
+  margin-bottom: 60px;
+  font-weight: bold;
+  color: #474747;
+  font-size: clamp(16px, 4vw, 24px);
+}
+.recipeList {
+}
