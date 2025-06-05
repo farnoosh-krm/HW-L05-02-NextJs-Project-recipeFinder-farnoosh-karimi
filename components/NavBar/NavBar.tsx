@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "./NavBar.module.scss";
 import Hamburger from "./Hamburger";
 import NavList from "./NavList";
@@ -10,6 +10,16 @@ import logoFood from "../../assets/images/japanese-food.svg";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768 && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [menuOpen]);
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
@@ -33,7 +43,11 @@ const NavBar = () => {
           <Hamburger onClick={handleMenuToggle} />
         </div>
 
-        {menuOpen && <NavList />}
+        {menuOpen && (
+          <div className={styled.mobileMenu}>
+            <NavList />
+          </div>
+        )}
       </nav>
     </header>
   );

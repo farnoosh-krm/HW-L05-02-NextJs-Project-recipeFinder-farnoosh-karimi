@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { GoHeart, GoHeartFill } from "react-icons/go";
+import { GiAlarmClock } from "react-icons/gi";
 import Image from "next/image";
 import styled from "./ShowRecipes.module.scss";
 import { Recipe } from "@/constant/types";
 import { useRouter } from "next/navigation";
+import DOMPurify from "isomorphic-dompurify";
 
 interface ShowRecipesProps {
   item: Recipe;
-  onRemoveFavorite?: (id: number) => void; // اضافه شده
+  onRemoveFavorite?: (id: number) => void;
 }
 
 const ShowRecipes = ({ item, onRemoveFavorite }: ShowRecipesProps) => {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
+  const cleanContentSummary = DOMPurify.sanitize(item?.summary || "");
 
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
@@ -60,9 +63,17 @@ const ShowRecipes = ({ item, onRemoveFavorite }: ShowRecipesProps) => {
   return (
     <div>
       <p className={styled.cookTime}>
-        time for cooking: <strong>{item.readyInMinutes}</strong> minutes
+        <GiAlarmClock size={"2em"} /> <strong>{item.readyInMinutes}</strong>{" "}
+        minutes
       </p>
       <p className={styled.recipeTitle}>{item.title}</p>
+      <hr className={styled.line} />
+      <p
+        className={styled.summaryContainer}
+        dangerouslySetInnerHTML={{
+          __html: cleanContentSummary.slice(0, 130) + " ...",
+        }}
+      />
 
       <Image
         src={item.image}
@@ -86,7 +97,7 @@ const ShowRecipes = ({ item, onRemoveFavorite }: ShowRecipesProps) => {
               <GoHeartFill
                 size="2em"
                 color="red"
-                className={styled.heartFill}
+                className={styled.heart}
                 onClick={() => handleUnfavorite(item.id)}
               />
             )}

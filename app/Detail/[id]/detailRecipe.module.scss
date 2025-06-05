@@ -97,3 +97,20 @@
     background-color: #e1b0b0;
   }
 }
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.loading {
+  border-radius: 50%;
+}

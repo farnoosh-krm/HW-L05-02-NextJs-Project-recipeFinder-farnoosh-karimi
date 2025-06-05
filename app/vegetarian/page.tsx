@@ -6,14 +6,16 @@ const VegetarianFood = () => {
   return (
     <div>
       <Layout>
-        <ExplorePageComponent
-          recipeNumber={12}
-          dietType={"Vegetarian"}
-          searchTerm={""}
-          titleMatch={""}
-          excludeIngredients={""}
-          recipeType={""}
-        />
+        <div className="mt-[60px]">
+          <ExplorePageComponent
+            recipeNumber={12}
+            dietType={"Vegetarian"}
+            searchTerm={""}
+            titleMatch={""}
+            excludeIngredients={""}
+            recipeType={""}
+          />
+        </div>
       </Layout>
     </div>
   );

@@ -60,8 +60,8 @@ const LandingPage = () => {
         <p className={styled.text3Container}>Random Recipe</p>
         <ExplorePageComponent
           recipeNumber={4}
-          dietType={"Paleo"}
-          searchTerm={""}
+          dietType={""}
+          searchTerm={"pasta"}
           excludeIngredients={""}
           titleMatch={""}
           recipeType={""}

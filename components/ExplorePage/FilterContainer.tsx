@@ -8,6 +8,7 @@ import styles from "../LandingPage/LandingPage.module.scss";
 import ExplorePageComponent from "./ExplorePage";
 import Slider from "@mui/material/Slider";
 import { styled as muiStyled } from "@mui/material/styles";
+import { CiSearch } from "react-icons/ci";
 
 const FilterContainer = () => {
   const [searchTerm, setSearchTerm] = useState("");

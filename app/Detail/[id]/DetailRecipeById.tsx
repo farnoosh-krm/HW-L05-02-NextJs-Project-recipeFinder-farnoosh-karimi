@@ -5,6 +5,11 @@ import Image from "next/image";
 import Layout from "@/components/Layout/Layout";
 import styled from "./detailRecipe.module.scss";
 import DOMPurify from "isomorphic-dompurify";
+import { PiForkKnifeFill } from "react-icons/pi";
+import { GiAlarmClock } from "react-icons/gi";
+import { FaMoneyBill1Wave } from "react-icons/fa6";
+// import loadingPic from "../../../assets/images/loading1.gif";
+import loadingPic from "../../../assets/images/load4.gif";
 import Link from "next/link";
 
 const DetailRecipeById = ({ recipeId }) => {
@@ -47,7 +52,17 @@ const DetailRecipeById = ({ recipeId }) => {
   }, [recipeId]);
 
   if (!data || !ingredient || !analyzedInstructions) {
-    return <p>Loading...</p>;
+    return (
+      <div className={styled.loadingWrapper}>
+        <Image
+          className={styled.loading}
+          src={loadingPic}
+          alt="loading pic"
+          width={200}
+          height={200}
+        />
+      </div>
+    );
   }
 
   return (
@@ -57,14 +72,17 @@ const DetailRecipeById = ({ recipeId }) => {
           <h1>{data.title}</h1>
           <Image src={data.image} alt={data.image} width={500} height={450} />
           <div className={styled.additionalInfo}>
-            <p>
-              Ready Time:<strong> {data.readyInMinutes}</strong> minutes
+            <p className={styled.details}>
+              <GiAlarmClock size={"2em"} />
+              <strong> {data.readyInMinutes}</strong> minutes
             </p>
-            <p>
-              Serving: <strong> {data.servings} </strong> persons
+            <p className={styled.details}>
+              <PiForkKnifeFill size={"2em"} />{" "}
+              <strong> {data.servings} </strong> persons
             </p>
-            <p>
-              Price Per Serving: <strong>{data.pricePerServing}</strong> USD
+            <p className={styled.details}>
+              <FaMoneyBill1Wave size={"2em"} />{" "}
+              <strong>{data.pricePerServing}</strong> USD
             </p>
           </div>
 

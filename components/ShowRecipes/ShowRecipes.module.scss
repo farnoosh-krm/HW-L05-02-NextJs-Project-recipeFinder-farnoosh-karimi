@@ -17,7 +17,10 @@
 }
 
 .cookTime {
-  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 80px;
   font-size: 0.8rem;
   margin-bottom: 10px;
 }
@@ -25,7 +28,18 @@
 .recipeTitle {
   color: #4b5563;
   font-weight: bold;
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.line {
+  margin: 8px 0px;
+  border: 1px solid #6c6c6c;
+  border-radius: 5px;
+}
+
+.summaryContainer {
+  font-size: clamp(0.75rem, 2vw, 0.8rem);
+  color: #474747;
 }
 
 .recipeImage {
@@ -76,4 +90,42 @@
 .recipeFavoriteContainer:hover {
   cursor: pointer;
   transition: width 0.3s ease;
+}
+
+@media (max-width: 350px) {
+  .recipeFavoriteContainer {
+    bottom: 50px;
+    left: 20px;
+  }
+  .recipeButton {
+    bottom: 30px;
+    left: 20px;
+    padding: 0px 0px;
+    font-size: 0.9rem;
+  }
+  .cookTime {
+    margin-top: 50px;
+  }
+  // .recipeImage {
+  //   width: 80%;
+  // }
+}
+
+@media (max-width: 250px) {
+  .cookTime {
+    margin-top: 5px;
+  }
+  .recipeTitle {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 200) {
+  .recipeButton {
+    bottom: 15px;
+    left: 0px;
+
+    padding: 0px;
+    font-size: 0.7rem;
+  }
 }

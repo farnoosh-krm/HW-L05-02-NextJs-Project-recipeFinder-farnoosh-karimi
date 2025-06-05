@@ -20,16 +20,7 @@ body {
   color: var(--foreground);
 
   background-color: #ede8dc;
-  /* background-image: radial-gradient(at 47% 33%, #9ebc8a 0, transparent 59%),
-    radial-gradient(at 82% 65%, #e1acac 0, transparent 55%),
-    radial-gradient(at 20% 65%, #ffe99a 0, transparent 55%);
-
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover; */
-  font-family: Poppins;
-  /* font-style: italic; */
+  /* font-family: Poppins; */
 }
 
 @layer utilities {
