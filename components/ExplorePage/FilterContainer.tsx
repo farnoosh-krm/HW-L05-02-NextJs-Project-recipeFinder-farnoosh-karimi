@@ -74,19 +74,20 @@ const FilterContainer = () => {
         </div>
         <div className={styled.filterContainer}>
           <div className={styled.filterPart}>
-            <label>Enter Title or Ingredient </label>
+            <label>Enter Ingredient Include in Recipe Title</label>
             <input
               type="text"
-              placeholder="enter title or ingredient ..."
+              placeholder="enter title ..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
           <div className={styled.filterPart}>
-            <label>Enter Ingredient Include in Recipe Title</label>
+            <label>Enter Title or Ingredient </label>
             <input
               type="text"
+              placeholder="enter title or ingredient ..."
               value={titleMatch}
               onChange={(e) => setTitleMatch(e.target.value)}
             />
@@ -96,6 +97,7 @@ const FilterContainer = () => {
             <label>Enter Exclude Ingredient</label>
             <input
               type="text"
+              placeholder="enter exclude ingredient ..."
               value={excludeIngredients}
               onChange={(e) => setExcludeIngredients(e.target.value)}
             />

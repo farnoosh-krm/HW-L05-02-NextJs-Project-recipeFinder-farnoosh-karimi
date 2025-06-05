@@ -82,7 +82,7 @@ const DetailRecipeById = ({ recipeId }) => {
             </p>
             <p className={styled.details}>
               <FaMoneyBill1Wave size={"2em"} />{" "}
-              <strong>{data.pricePerServing}</strong> USD
+              <strong>{(data.pricePerServing / 100).toFixed(2)}</strong> USD
             </p>
           </div>
 
