@@ -25,13 +25,13 @@ const DetailRecipeById = ({ recipeId }) => {
     const getFoodRecipe = async () => {
       try {
         const response =
-          await fetch(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${process.env.NEXT_PUBLIC_API_KEY}
+          await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${recipeId}/information?apiKey=${process.env.NEXT_PUBLIC_API_KEY}
 `);
         const ingredientResponse =
-          await fetch(`https://api.spoonacular.com/recipes/${recipeId}/ingredientWidget.json?apiKey=${process.env.NEXT_PUBLIC_API_KEY}
+          await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${recipeId}/ingredientWidget.json?apiKey=${process.env.NEXT_PUBLIC_API_KEY}
 `);
         const analyzeResponse =
-          await fetch(`https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=${process.env.NEXT_PUBLIC_API_KEY}
+          await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/${recipeId}/analyzedInstructions?apiKey=${process.env.NEXT_PUBLIC_API_KEY}
 `);
         const result = await response.json();
         const ingredientResult = await ingredientResponse.json();
@@ -58,8 +58,8 @@ const DetailRecipeById = ({ recipeId }) => {
           className={styled.loading}
           src={loadingPic}
           alt="loading pic"
-          width={200}
-          height={200}
+          width={180}
+          height={180}
         />
       </div>
     );

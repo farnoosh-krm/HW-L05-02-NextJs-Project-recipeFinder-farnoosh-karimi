@@ -14,6 +14,7 @@ const VegetarianFood = () => {
             titleMatch={""}
             excludeIngredients={""}
             recipeType={""}
+            sortType={""}
           />
         </div>
       </Layout>

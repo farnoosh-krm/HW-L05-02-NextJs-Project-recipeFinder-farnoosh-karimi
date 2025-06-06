@@ -57,14 +57,15 @@ const LandingPage = () => {
       </div>
 
       <div className={styled.trendRecipeContainer}>
-        <p className={styled.text3Container}>Random Recipe</p>
+        <p className={styled.text3Container}>Popular Recipes</p>
         <ExplorePageComponent
           recipeNumber={4}
           dietType={""}
-          searchTerm={"pasta"}
+          searchTerm={""}
           excludeIngredients={""}
           titleMatch={""}
           recipeType={""}
+          sortType={"popularity"}
         />
       </div>
     </div>

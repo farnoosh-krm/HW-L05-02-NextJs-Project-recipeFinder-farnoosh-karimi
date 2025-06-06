@@ -11,6 +11,7 @@ const ExplorePageComponent = ({
   titleMatch,
   excludeIngredients,
   recipeType,
+  sortType,
 }: ExplorePageProps) => {
   const [data, setData] = useState([]);
 
@@ -18,7 +19,7 @@ const ExplorePageComponent = ({
     const getFoodRecipe = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&number=${recipeNumber}&titleMatch=${titleMatch}&query=${searchTerm}&excludeIngredients=${excludeIngredients}&type=${recipeType}&addRecipeInformation=true&addRecipeNutrition=true&diet=${dietType}`
+          `${process.env.NEXT_PUBLIC_BASE_URL}/complexSearch?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&number=${recipeNumber}&titleMatch=${titleMatch}&query=${searchTerm}&excludeIngredients=${excludeIngredients}&type=${recipeType}&addRecipeInformation=true&addRecipeNutrition=true&diet=${dietType}&sort=${sortType}`
         );
         const result = await response.json();
         console.log("Fetched:", result);
@@ -36,6 +37,7 @@ const ExplorePageComponent = ({
     excludeIngredients,
     titleMatch,
     recipeType,
+    sortType,
   ]);
 
   return (

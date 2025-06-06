@@ -53,4 +53,5 @@ export type ExplorePageProps = {
   titleMatch: string;
   excludeIngredients: string;
   recipeType: string;
+  sortType:string;
 };

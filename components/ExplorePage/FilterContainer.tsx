@@ -6,62 +6,15 @@ import { useState } from "react";
 import styled from "./explorePage.module.scss";
 import styles from "../LandingPage/LandingPage.module.scss";
 import ExplorePageComponent from "./ExplorePage";
-import Slider from "@mui/material/Slider";
-import { styled as muiStyled } from "@mui/material/styles";
-import { CiSearch } from "react-icons/ci";
 
 const FilterContainer = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [dietType, setDietType] = useState("Paleo");
+  const [dietType, setDietType] = useState("");
   const [recipeNumber, setRecipeNumber] = useState(4);
   const [excludeIngredients, setExcludeIngredients] = useState("");
   const [titleMatch, setTitleMatch] = useState("");
-  const [recipeType, setRecipeType] = useState("main course");
-
-  const PrettoSlider = muiStyled(Slider)({
-    color: "#52af77",
-    height: 8,
-    "& .MuiSlider-track": {
-      border: "none",
-    },
-    "& .MuiSlider-thumb": {
-      height: 24,
-      width: 24,
-      backgroundColor: "#fff",
-      border: "2px solid currentColor",
-      "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
-        boxShadow: "inherit",
-      },
-      "&:before": {
-        display: "none",
-      },
-    },
-    "& .MuiSlider-valueLabel": {
-      lineHeight: 1.2,
-      fontSize: 12,
-      background: "unset",
-      padding: 0,
-      width: 32,
-      height: 32,
-      borderRadius: "50% 50% 50% 0",
-      backgroundColor: "#52af77",
-      transformOrigin: "bottom left",
-      transform: "translate(50%, -100%) rotate(-45deg) scale(0)",
-      "&:before": { display: "none" },
-      "&.MuiSlider-valueLabelOpen": {
-        transform: "translate(50%, -100%) rotate(-45deg) scale(1)",
-      },
-      "& > *": {
-        transform: "rotate(45deg)",
-      },
-    },
-  });
-
-  const handleChange = (event, newValue) => {
-    if (typeof newValue === "number") {
-      setRecipeNumber(newValue[0]);
-    }
-  };
+  const [recipeType, setRecipeType] = useState("");
+  const [sortType, setSortType] = useState("");
 
   return (
     <div>
@@ -69,17 +22,17 @@ const FilterContainer = () => {
         <div className={styles.mainImageContainer}>
           <Image src={searchPic} alt="aa pic" width={1800} height={400} />
           <div className={styles.textContainer}>
-            <p className={styles.text1Container}>Explore in Recipes</p>
+            <p className={styles.text1Container}>Explore Recipes</p>
           </div>
         </div>
         <div className={styled.filterContainer}>
           <div className={styled.filterPart}>
-            <label>Enter Ingredient Include in Recipe Title</label>
+            <label>Enter an Ingredient to Search For in Recipe Titles</label>
             <input
               type="text"
               placeholder="enter title ..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              value={titleMatch}
+              onChange={(e) => setTitleMatch(e.target.value)}
             />
           </div>
 
@@ -88,13 +41,13 @@ const FilterContainer = () => {
             <input
               type="text"
               placeholder="enter title or ingredient ..."
-              value={titleMatch}
-              onChange={(e) => setTitleMatch(e.target.value)}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
 
           <div className={styled.filterPart}>
-            <label>Enter Exclude Ingredient</label>
+            <label>Enter an Ingredient to Exclude</label>
             <input
               type="text"
               placeholder="enter exclude ingredient ..."
@@ -104,19 +57,12 @@ const FilterContainer = () => {
           </div>
 
           <div className={styled.filterPart}>
-            <label>Recipe Number</label>
+            <label>Number of Recipes</label>
             <input
               type="number"
               value={recipeNumber}
               onChange={(e) => setRecipeNumber(Number(e.target.value))}
             />
-            {/* <PrettoSlider
-              value={recipeNumber}
-              onChange={handleChange}
-              min={1}
-              max={200}
-              valueLabelDisplay="on"
-            /> */}
           </div>
 
           <div className={styled.filterPart}>
@@ -125,9 +71,10 @@ const FilterContainer = () => {
               value={dietType}
               onChange={(e) => setDietType(e.target.value)}
             >
-              <option selected value="Paleo">
-                Paleo
+              <option selected value="">
+                all
               </option>
+              <option value="Paleo">Paleo</option>
               <option value="Vegetarian">Vegetarian</option>
               <option value="Vegan">Vegan</option>
               <option value="Gluten Free">Gluten Free</option>
@@ -141,15 +88,33 @@ const FilterContainer = () => {
               value={recipeType}
               onChange={(e) => setRecipeType(e.target.value)}
             >
+              <option value="">all</option>
               <option value="main course">main course</option>
               <option value="dessert">dessert</option>
               <option value="salad">salad</option>
               <option value="bread">bread</option>
               <option value="breakfast">breakfast</option>
               <option value="soup">soup</option>
-              <option value="fingerfood">fingerfood</option>
+              <option value="finger food">finger food</option>
               <option value="snack">snack</option>
               <option value="drink">drink</option>
+            </select>
+          </div>
+
+          <div className={styled.filterPart}>
+            <label>Sort</label>
+            <select
+              value={sortType}
+              onChange={(e) => setSortType(e.target.value)}
+            >
+              <option value="">no score</option>
+              <option value="popularity">popularity</option>
+              <option value="healthiness">healthiness</option>
+              <option value="price">price</option>
+              <option value="calories">calories</option>
+              <option value="carbohydrates">carbohydrates</option>
+              <option value="protein">protein</option>
+              <option value="total-fat">total-fat</option>
             </select>
           </div>
         </div>
@@ -161,6 +126,7 @@ const FilterContainer = () => {
         excludeIngredients={excludeIngredients}
         titleMatch={titleMatch}
         recipeType={recipeType}
+        sortType={sortType}
       />
     </div>
   );
