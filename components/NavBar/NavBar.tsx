@@ -5,7 +5,6 @@ import styled from "./NavBar.module.scss";
 import Hamburger from "./Hamburger";
 import NavList from "./NavList";
 import Image from "next/image";
-import logoPic from "../../assets/images/logo.png";
 import logoFood from "../../assets/images/japanese-food.svg";
 
 const NavBar = () => {
