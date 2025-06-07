@@ -51,7 +51,6 @@ const ShowRecipes = ({ item, onRemoveFavorite }: ShowRecipesProps) => {
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     setFavoriteIds((prev) => prev.filter((id) => id !== recipeId));
 
-    // Notify parent component (FavoriteComponent)
     if (onRemoveFavorite) {
       onRemoveFavorite(recipeId);
     }

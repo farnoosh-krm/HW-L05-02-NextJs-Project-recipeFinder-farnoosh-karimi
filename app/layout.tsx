@@ -3,7 +3,6 @@ import "./globals.css";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import { Poppins } from "next/font/google";
-import AuthProvider from "@/components/Auth/AuthProvider";
 
 export const metadata: Metadata = {
   title: "Recipe Finder",
@@ -28,11 +27,9 @@ export default function RootLayout({
         <link rel="icon" href="/icon2.svg" type="svg" />
       </head>
       <body className={`${poppins.variable} antialiased`}>
-        <AuthProvider>
-          <NavBar />
-          {children}
-          <Footer />
-        </AuthProvider>
+        <NavBar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
