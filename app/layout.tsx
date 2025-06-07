@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "@/components/Footer/Footer";
 import { Poppins } from "next/font/google";
-
-// const geistSans = localFont({
-//   src: "../assets/fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "../assets/fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+import AuthProvider from "@/components/Auth/AuthProvider";
 
 export const metadata: Metadata = {
   title: "Recipe Finder",
@@ -39,9 +28,11 @@ export default function RootLayout({
         <link rel="icon" href="/icon2.svg" type="svg" />
       </head>
       <body className={`${poppins.variable} antialiased`}>
-        <NavBar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
