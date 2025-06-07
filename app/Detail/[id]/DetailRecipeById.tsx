@@ -12,7 +12,7 @@ import { FaMoneyBill1Wave } from "react-icons/fa6";
 import loadingPic from "../../../assets/images/load4.gif";
 import Link from "next/link";
 
-const DetailRecipeById = ({ recipeId }) => {
+const DetailRecipeById = ({ recipeId }: { recipeId: number }) => {
   const [data, setData] = useState<Recipe | null>(null);
   const [ingredient, setIngredient] = useState<Ingredient | null>(null);
   const [analyzedInstructions, setAnalyzedInstructions] = useState<
