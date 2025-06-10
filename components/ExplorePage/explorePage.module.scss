@@ -72,6 +72,10 @@
   .filterContainer {
     grid-template-columns: repeat(1, 2fr);
   }
+  .wholeContainer input,
+  .wholeContainer select {
+    font-size: clamp(13px, 1.5vw, 14px);
+  }
 }
 
 @media (max-width: 460px) {

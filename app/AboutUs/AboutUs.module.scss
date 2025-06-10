@@ -9,3 +9,10 @@
   color: #474747;
   margin-bottom: 30px;
 }
+
+@media (max-width: 768px) {
+  .textContainer {
+    font-size: clamp(13px, 1.5vw, 24px);
+    padding: 5px;
+  }
+}

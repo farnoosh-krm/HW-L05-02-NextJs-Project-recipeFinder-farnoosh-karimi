@@ -24,7 +24,7 @@
   font-weight: bold;
 }
 .mainContainer p {
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: clamp(13px, 1.5vw, 16px);
   color: #474747;
 }
 .nutritionContainer {
@@ -113,4 +113,28 @@
 
 .loading {
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 0;
+  }
+  .groupItems {
+    padding: 10px;
+    width: 100%;
+    font-size: clamp(13px, 1.5vw, 14px);
+  }
+  .nutritionContainer {
+    width: 100%;
+    font-size: clamp(13px, 1.5vw, 14px);
+  }
+  .instructionsContainer li {
+    padding: 3px;
+  }
+  .instructionsContainer {
+    padding-left: 20px;
+  }
+  .buttonMoreInfo {
+    font-size: clamp(13px, 1.5vw, 14px);
+  }
 }
