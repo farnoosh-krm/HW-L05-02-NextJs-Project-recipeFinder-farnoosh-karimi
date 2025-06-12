@@ -1,9 +1,8 @@
-# Recipe Finder 🍳
-
 A Next.js web application for discovering cooking recipes using the Spoonacular API.
 
 ## ✨ Features
 
+- **Live Demo**: [View Online](https://hw-l05-02-nextjs-project-recipefinder.onrender.com/)
 - **Ingredient-based recipe search**
 - **Detailed recipe viewing**
 - **Favorite recipes storage** (localStorage)
@@ -67,5 +66,6 @@ Adaptive grid for recipe cards
 
 Collapsible filters for smaller screens
 
-📜 License
-MIT © Farnoosh Karimi
+## 📜 License
+
+MIT © [Farnoosh Karimi](https://github.com/farnoosh-krm)
