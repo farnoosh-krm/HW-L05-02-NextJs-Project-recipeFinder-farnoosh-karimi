@@ -20,7 +20,7 @@ A Next.js web application for discovering cooking recipes using the Spoonacular 
 ## 🚀 Getting Started
 
 1. Clone the repository:
-   git clone https://github.com/your-username/recipe-finder
+   git clone https://github.com/farnoosh-krm/HW-L05-02-NextJs-Project-recipeFinder-farnoosh-karimi.git
 
 2. Install dependencies:
    npm install
