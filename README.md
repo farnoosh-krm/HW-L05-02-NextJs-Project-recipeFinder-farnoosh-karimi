@@ -24,8 +24,10 @@ A Next.js web application for discovering cooking recipes using the Spoonacular 
    git clone https://github.com/farnoosh-krm/HW-L05-02-NextJs-Project-recipeFinder-farnoosh-karimi.git
 
 2. Install dependencies:
-   \`\`\`bash
+
+   ```bash
    npm install
+   ```
 
 3. Set up environment variables:
 
