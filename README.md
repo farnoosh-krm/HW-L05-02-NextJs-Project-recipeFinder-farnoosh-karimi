@@ -20,20 +20,24 @@ A Next.js web application for discovering cooking recipes using the Spoonacular 
 ## 🚀 Getting Started
 
 1. Clone the repository:
+
    git clone https://github.com/farnoosh-krm/HW-L05-02-NextJs-Project-recipeFinder-farnoosh-karimi.git
 
 2. Install dependencies:
-   bash
+
    npm install
 
 3. Set up environment variables:
+
    env
    NEXT_PUBLIC_SPOONACULAR_API_KEY=your_api_key_here
 
 4. Run development server:
+
    npm run dev
 
 🔍 API Usage
+
 Example search endpoint:
 
 const response = await fetch(
@@ -41,6 +45,7 @@ const response = await fetch(
 );
 
 🎨 Design Elements
+
 Color Scheme: Warm food-inspired palette (oranges, greens)
 
 Typography: Google Fonts (Poppins)
@@ -48,6 +53,7 @@ Typography: Google Fonts (Poppins)
 UI Components: Recipe cards, interactive search, animated transitions
 
 📱 Responsive Layout
+
 Mobile-first approach
 
 Adaptive grid for recipe cards
