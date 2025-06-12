@@ -48,7 +48,7 @@ A Next.js web application for discovering cooking recipes using the Spoonacular 
 🔍 API Usage
 
 const response = await fetch(
-`https://api.spoonacular.com/recipes/complexSearch?query=pasta&includeIngredients=tomato,cheese&diet=vegetarian&apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`
+`https://api.spoonacular.com/recipes/complexSearch?query=pasta&includeIngredients=tomato,cheese&diet=vegetarian&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`
 );
 
 🎨 Design Elements
