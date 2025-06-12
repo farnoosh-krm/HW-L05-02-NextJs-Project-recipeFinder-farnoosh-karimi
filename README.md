@@ -21,7 +21,9 @@ A Next.js web application for discovering cooking recipes using the Spoonacular 
 
 1. Clone the repository:
 
+```bash
    git clone https://github.com/farnoosh-krm/HW-L05-02-NextJs-Project-recipeFinder-farnoosh-karimi.git
+```
 
 2. Install dependencies:
 
@@ -32,15 +34,18 @@ A Next.js web application for discovering cooking recipes using the Spoonacular 
 3. Set up environment variables:
 
    env
+
+   ```bash
    NEXT_PUBLIC_API_KEY=your_api_key_here
+   ```
 
 4. Run development server:
 
+```bash
    npm run dev
+```
 
 🔍 API Usage
-
-Example search endpoint:
 
 const response = await fetch(
 `https://api.spoonacular.com/recipes/complexSearch?query=pasta&includeIngredients=tomato,cheese&diet=vegetarian&apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`
